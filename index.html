@@ -3,7 +3,12 @@
   <head>
   <style>
   body { background-color: #E3F2FD!important;}
-  .m0 { margin: 0!important; line-height: 32px;}
+  .m0 { margin: 0!important; line-height: 32px!important;}
+  .m1 { height: 96px!important; }
+  @media screen and (max-width: 443px) {
+    .m0 { margin: 0!important; line-height: 16px!important;}
+    .m1 { height: 96px!important; }
+  }
   .card-panel {
     transition: background-color 0.5s ease-out;
   }
@@ -57,8 +62,8 @@
   </head>
 
   <body>
-    <div class="navbar-fixed"  style="height:96px">
-      <nav class="nav-wrapper blue lighten"  style="height:96px">
+    <div class="navbar-fixed m1">
+      <nav class="nav-wrapper blue lighten m1">
         <center>
           <h4>The Oath</h4>
           <p class="blue darken-1 m0">I swear to fulfill, to the best of my ability and judgment, this covenant:</p>
