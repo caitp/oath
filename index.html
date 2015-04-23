@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+  body { background-color: #E3F2FD!important;}
+  .m0 { margin: 0!important; line-height: 32px;}
+  .card-panel {
+    transition: background-color 0.5s ease-out;
+  }
+  .card-panel:hover {
+    background-color: #b3e5fc!important;
+  }
+  </style>
+  <script>
+    function getBooleanParam(param) {
+      if (window.location.search) {
+        var re = new RegExp("[?&](" + param + ")(?!=([^&]*?))?", "i");
+        var match = re.exec(window.location.search);
+        if (match) {
+          var value = match[2];
+          if (value === "false" || value === "0") return false;
+          return true;
+        }
+      }
+      return false;
+    }
+    var scripts = [
+      "third_party/jquery/js/jquery.min.js",
+      "third_party/materialize/js/materialize.min.js"
+    ];
+    var stylesheets = [
+      "third_party/materialize/css/materialize.min.css"
+    ];
+    if (getBooleanParam("debug")) {
+      // load unminified files
+      scripts = scripts.map(unminify);
+      stylesheets = stylesheets.map(unminify);
+    }
+    document.open();
+    stylesheets.forEach(loadStylesheet);
+    scripts.forEach(loadScript);
+
+    function unminify(name) {
+      return name.replace(".min.", ".");
+    }
+
+    function loadStylesheet(name) {
+      document.writeln('<link rel="stylesheet" href="' + name + '">');
+    }
+
+    function loadScript(name) {
+      document.write('<script type="text/javascript" src="' + name + '">');
+      document.writeln('</\u0073cript>');
+    }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  </head>
+
+  <body>
+    <div class="navbar-fixed"  style="height:96px">
+      <nav class="nav-wrapper blue lighten"  style="height:96px">
+        <center>
+          <h4>The Oath</h4>
+          <p class="blue darken-1 m0">I swear to fulfill, to the best of my ability and judgment, this covenant:</p>
+        </center>
+      </nav>
+    </div>
+    <div class="container">
+    <p class="card-panel">I will respect the hard-won scientific gains of those engineers in whose steps I walk, and gladly share such knowledge as is mine with those who are to follow.</p>
+
+    <p class="card-panel">I will apply, for the benefit of the user and maintainer, all measures which are required, avoiding those twin traps of premature optimization and poor code coverage.</p>
+
+    <p class="card-panel">I will remember that there is art to medicine as well as science, and that warmth, sympathy, and understanding may outweigh my own selfish need to defend code I hacked together hours before.</p>
+
+    <p class="card-panel">I will not be ashamed to say "I know not," nor will I fail to call in my colleagues when the skills of another are needed for fixing a difficult bug.</p>
+
+    <p class="card-panel">I will respect the privacy of my users, for their problems are not disclosed to me that the world may know. Most especially must I tread with care in matters of security, finance, and interpersonal matters. If it is given me to save a user from being compromised, all thanks. But it may also be within my power to hand over a user's information to authorities; this awesome responsibility must be faced with great humbleness and awareness of my own frailty. Above all, I must not play at God.</p>
+
+    <p class="card-panel">I will remember that I do not treat a stack overflow, or a slow application, but a human being, whose broken software may affect the person's family and economic stability. My responsibility includes these related problems, if I am to care adequately for my users.
+
+    <p class="card-panel">I will prevent bugs whenever I can, for prevention is preferable to fixing.</p>
+
+    <p class="card-panel">I will remember that I remain a member of society, with special obligations to all my fellow human beings, those sound of mind and body as well as the infirm. Being a hacker does not mean I must be a jerk to anyone, nor to be insecure and weak.</p>
+
+    <p class="card-panel">If I do not violate this oath, may I enjoy life and art, respected while I live and remembered with affection thereafter. May I always act so as to preserve the finest traditions of my calling and may I long experience the joy of creating, teaching, and fixing bugs for those who seek my help.</p>
+    </div>
+  </body>
+</html>
