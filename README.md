@@ -21,3 +21,7 @@ I will prevent bugs whenever I can, for prevention is preferable to fixing.
 I will remember that I remain a member of society, with special obligations to all my fellow human beings, those sound of mind and body as well as the infirm. Being a hacker does not mean I must be a jerk to anyone, nor to be insecure and weak.
 
 If I do not violate this oath, may I enjoy life and art, respected while I live and remembered with affection thereafter. May I always act so as to preserve the finest traditions of my calling and may I long experience the joy of creating, teaching, and fixing bugs for those who seek my help.
+
+---
+
+So, this little piece is kind of lame, I'm not as poetic as Hippocrates and whoever translated his writing to english. But hey, feel free to send pull requests improving the language and making a stronger statement about the responsibility to users, maintainers, embedders, and the importance of good behaviour. This project is licensed under the public domain. Do whatever you like with it, or nothing. It's all good, man.
